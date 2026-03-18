@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5C5C5C"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Logo Icon -->
+        <ImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/coffal"
+            android:contentDescription="Coffee logo" />
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="-50dp"
+            android:text="COFF AL."
+            android:textColor="#FF9800"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Product Content -->
+    <ScrollView
+        android:id="@+id/productScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Product Title -->
+            <TextView
+                android:id="@+id/productTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ICED COFFEE/CARAMEL"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Product Image -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:id="@+id/productImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/image1"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Product image" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Product Description -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#5C5C5C">
+
+                <TextView
+                    android:id="@+id/productDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Iced caramel coffee is a refreshing beverage made by brewing chilled coffee and mixing it with sweet caramel syrup, served over ice. The combination creates a smooth, creamy taste with rich coffee flavors balanced by the sweetness of caramel. It's often topped with whipped cream and a drizzle of caramel for a luxurious finish."
+                    android:textSize="13sp"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:lineSpacingExtra="4dp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sugar Level Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sugar Level:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:id="@+id/sugar0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSugar0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sugar25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSugar25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sugar50"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSugar50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sugar75"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSugar75"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="75%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sugar100"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSugar100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Size Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:id="@+id/sizeS"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSizeS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sizeM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSizeM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sizeL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="@drawable/button_selector">
+
+                    <TextView
+                        android:id="@+id/tvSizeL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="L"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@drawable/button_text_selector" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Quantity Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btnMinus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="-"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:background="@drawable/button_white_background" />
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:background="@drawable/button_white_background" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <!-- Add to Cart FAB -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddToCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/shopping"
+                    app:tint="#FFFFFF"
+                    app:backgroundTint="#FF9800"
+                    app:fabSize="normal"
+                    android:contentDescription="Add to cart" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_gray_background"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Home -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/home"
+                android:tint="#000000"
+                android:contentDescription="Home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Menu -->
+        <LinearLayout
+            android:id="@+id/navMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/menu"
+                android:tint="#000000"
+                android:contentDescription="Menu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Orders -->
+        <LinearLayout
+            android:id="@+id/navOrders"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/shopping"
+                android:tint="#000000"
+                android:contentDescription="Orders" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders"
+                android:textSize="12sp"
+                android:textColor="#FF9800"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Account -->
+        <LinearLayout
+            android:id="@+id/navAccount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/user"
+                android:tint="#000000"
+                android:contentDescription="Account" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/coffal"
+        android:contentDescription="Logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Card -->
+    <LinearLayout
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/bg_card"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp">
+
+        <!-- Tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sign Up"
+                android:textColor="#888888"
+                android:padding="12dp"
+                android:background="@android:color/transparent"/>
+
+            <Button
+                android:id="@+id/btnSignIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sign In"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:padding="12dp"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <!-- Tab Indicator -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#DDDDDD"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FF9800"/>
+        </LinearLayout>
+
+        <!-- Username -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:hint="Username/Email"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"/>
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"/>
+
+        <!-- Show Password -->
+        <CheckBox
+            android:id="@+id/cbShowPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Password"
+            android:textSize="12sp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- Forgot Password -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textColor="#2196F3"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Sign In Button -->
+        <Button
+            android:id="@+id/subSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:background="@drawable/bg_button_gray"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
