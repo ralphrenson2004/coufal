@@ -23,8 +23,8 @@ class SignInActivity : AppCompatActivity() {
 
     // Hardcoded account credentials
     companion object {
-        private const val HARDCODED_USERNAME = ""
-        private const val HARDCODED_PASSWORD = ""
+        private const val HARDCODED_USERNAME = "admin"
+        private const val HARDCODED_PASSWORD = "password123"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
